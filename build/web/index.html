@@ -5,25 +5,22 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=107813_179571_0&type=shadowbox&size=800x440'></script>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="\WEB-INF\login.css" type="text/css">;
-    </head>
-    <body class="mainbody">
-    <center>
-        <form action="login" method="post">
+   <head>
+      <title>Login Page</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body class="mainbody">
+      <center>
+         <form action="LoginService/login" method="post">
             <div>LOGIN PAGE</div>
             <br>
-            USERNAME :  <input type="text" name="email" placeholder="enter the name"/><br>
+            USERNAME :  <input type="text" name="username" placeholder="enter the name"/><br>
             <br/>
-            PASSWORD :  <input type="text" name="pass" placeholder="enter the password"/><br>
+            PASSWORD :  <input type="text" name="password" placeholder="enter the password"/><br>
             <br/>
             <button type="submit" >LOGIN</button>
-
-        </form>
-    </center>
-</body>
+         </form>
+      </center>
+   </body>
 </html>

@@ -10,19 +10,22 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String email = request.getParameter("email");
-        String pass = request.getParameter("pass");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         
-        if(Validate.checkUser(email, pass))
+        if(Validate.checkUser(username, password))
         {
-            response.sendRedirect("Welcome?user_name="+email+"");
+            HttpSession session = request.getSession();
+            session.setAttribute("user",username);
+            response.sendRedirect("Welcome?user_name="+username+"");
         }
         else
         {
-           out.println("Username or Password incorrect");
            RequestDispatcher rs = request.getRequestDispatcher("index.html");
+           out.println("<html><body><center>Your login and password are valid.<br>");
+           out.println("</center></body></html>");
+           out.println("<br>");           
            rs.include(request, response);
-           //response.sendRedirect("index.html");
         }
     }  
 }
